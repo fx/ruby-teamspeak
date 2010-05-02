@@ -257,6 +257,7 @@ module Teamspeak
 						@config ||= {}
 						@config[key.to_sym] = val
 					}
+					@config[:port] ||= 10011
 					break
 				end
 			} 
@@ -285,7 +286,7 @@ module Teamspeak
 		def connect
 			raise Exception if !config
 
-			@socket = TCPSocket.new(config[:host], 10011)
+			@socket = TCPSocket.new(config[:host], config[:port])
 			ret = @socket.gets # "TS3"
 			cmd(:login, :user => config[:user], :password => config[:password])
 		end
