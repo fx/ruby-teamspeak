@@ -1,0 +1,13 @@
+<% @server = Teamspeak.servers.first %>
+
+<div class="custom_block teamspeak">
+	<ul class="teamspeak">
+		<li class="server">
+			<%= link_to(@server.name, "teamspeak3://#{Teamspeak.config[:host]}:#{@server.port}") %> (Teamspeak 3)<br />
+			<sup><a href="#" onclick="$('.teamspeak .channel-empty').toggle();return false;">toggle empty channels</a></sup>
+			<ul class="server">
+				<%= render_teamspeak_server(:server => @server) %>
+			</ul>
+		</li>
+	</ul>
+</div>

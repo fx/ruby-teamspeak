@@ -1,0 +1,9 @@
+Manifest
+Rakefile
+lib/teamspeak.rb
+sockettest.rb
+spec/spec_helper.rb
+spec/teamspeak/base_spec.rb
+spec/teamspeak/server_spec.rb
+tasks/spec.rake
+test.rb

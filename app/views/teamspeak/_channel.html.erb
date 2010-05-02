@@ -1,0 +1,14 @@
+<li class="channel<%= ' channel-empty' if channel.empty? %>">
+	<%= channel.name %>
+	<% if !children.empty? -%>
+	<ul class="channels">
+		<%= children %>
+	</ul>
+	<% end -%>
+	
+	<% if !clients.empty? -%>
+	<ul class="clients">
+		<%= clients %>
+	</ul>
+	<% end -%>
+</li>
