@@ -2,13 +2,15 @@
 	<%= channel.name %>
 	<% if !children.empty? -%>
 	<ul class="channels">
-		<%= children %>
+		<% @child = children %>
+                <%= @child.html_safe %>
 	</ul>
 	<% end -%>
 	
 	<% if !clients.empty? -%>
 	<ul class="clients">
-		<%= clients %>
+		<% @cl = clients %>
+		<%= @cl.html_safe %>
 	</ul>
 	<% end -%>
 </li>
